@@ -1,4 +1,4 @@
-## React-Laravel Project
+# React-Laravel Project
 
 React-Laravel is a REST API based project. Laravel handel the REST API and backend part. React handel
 the frontend part. The main funtionality of the project is CRUD.
@@ -13,13 +13,13 @@ U->UPDATE->PUT
 
 D->DELETE->DELETE
 
-## Technologies
+# Technologies
 
 Laravel, React, REST and MySql
 
-## Installation
+# Installation
 
-# Laravel
+## Laravel API
 
 -> Clone the laravel project from the link https://github.com/mayusuf/react-laravel-crud in your project directory and enter the project directory.
 
@@ -44,7 +44,7 @@ Laravel, React, REST and MySql
 
 -> Start the project : php artisan serve
 
-#React
+## React
 
 -> Clone the project in your local directory from the link https://github.com/mayusuf/react-laravel-crud-react-part
 
@@ -61,10 +61,10 @@ Laravel, React, REST and MySql
 
 -> Start the project by running npm start
 
-## Future Update
+# Future Update
 
 The application is being developed. So, It will be updating time to time.  
 
-## Authors
+# Authors
 
 * **ABU YUSUF** - [mayusuf](https://github.com/mayusuf)
