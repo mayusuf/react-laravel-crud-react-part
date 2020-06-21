@@ -52,7 +52,7 @@ function AllMovies(){
 
     function removeMovie(movieId){
       
-      //alert(movieId);
+      
 
       fetch(`${API_MOVIE+'/'+movieId}`,{
         method:"DELETE",

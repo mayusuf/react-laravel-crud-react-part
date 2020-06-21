@@ -1,4 +1,5 @@
 import React, {useState,useEffect }  from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
@@ -86,7 +87,7 @@ function App() {
   
   const [cats, setCategories] = useState([]);
 
-  //getCategories(setCategories);
+  
 
   useEffect(() => {
 
@@ -94,15 +95,6 @@ function App() {
 
     getCategories().then(data => setCategories(data.categories));
 
-    // const getCategories = async () => {
-    //   const result = await axios(
-    //     `${API_CAT}`,
-    //   );
- 
-    //   setCategories(result.data);
-    // };
- 
-    // getCategories();
 
   }, []);
 

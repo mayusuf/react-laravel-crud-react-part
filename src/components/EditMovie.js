@@ -74,7 +74,6 @@ const useStyles = makeStyles((theme) => ({
 
 function submitForm(contentType, data, id, setResponse) {
 
-  alert(id)
 
   axios.put(
     `${API_MOVIE+'/'+id}`, data ,{ headers: {"Content-Type": contentType}}
@@ -85,21 +84,7 @@ function submitForm(contentType, data, id, setResponse) {
   })
 
 
-  //   axios.put(
-  //     `${API_MOVIE+'/'+id}`, {
-  //       "title":"edit Test",
-  //       "cover":"yusuf.tmp.jpeg",
-  //       "cat_id":"3",
-  //       "descrp":"sgogjkdjk",
-  //       "cnt_pro":"Germany"
-  //   },{ headers: {"Content-Type": contentType}}
-  // ).then((response) => {
-      
-  //     setResponse(response.data);
-
-  //   }).catch((error) => {
-  //     setResponse("error");
-  //   })
+  
 
   }
   
@@ -127,10 +112,7 @@ export default function EditMovie(props) {
     
     const getMovieDetails = () => fetch(`${API_MOVIE+'/'+props.movieId}`).then(res => res.json());
 
-    // getMovieDetails().then(
-    //   data => setTitle(data.movie[0].title),setDesc(data.movie[0].descrp), 
-    //   setCountry(data.movie[0].cnt_pro), setCat(data.movie[0].cat_id),
-    //   setFile(data.movie[0].cover));  
+    
 
     getMovieDetails().then(data=>setTitle(data.movie[0].title));
     getMovieDetails().then(data=>setDesc(data.movie[0].descrp));
@@ -143,7 +125,7 @@ export default function EditMovie(props) {
 
   console.log(cats);
   
-  //alert(movie_details.cat_id);
+  
 
   async function uploadWithJSON(){
 
@@ -154,7 +136,7 @@ export default function EditMovie(props) {
         reader.onerror = error => reject(error);
     });
 
-  alert(typeof cover)
+  
 
   const data = {
     title: title,        
@@ -163,14 +145,14 @@ export default function EditMovie(props) {
     cnt_pro: cnt_pro,
     cover:cover
 }
-   
+   // check is it new upload of image or not
    if(typeof cover == 'object'){    
       data.cover = await toBase64(cover)
     }else{
       data.cover = "noNewFile"
     }
 
-    //data.push(cov)
+    
     submitForm("application/json", data, props.movieId, (msg) => console.log(msg));
     
 }
@@ -262,22 +244,9 @@ export default function EditMovie(props) {
             </Select>
           </FormControl>
           <br/>
-          {/* <input
-            accept="image/*"
-            
-            className={classes.input}
-            id="contained-button-file"
-            type="file" 
-            
-          /> */}
+         
          <input type="file" name="file" onChange={(e) => setFile(e.target.files[0])}  />
-          {/* <label htmlFor="contained-button-file">
-          <img className={classes.image} alt={title} src={"http://localhost:8000/covers/"+cover} />
-            <Button className={classes.Button} variant="contained" color="primary" 
-            component="span" onChange={(e) => setFile(e.target.files[0])}>
-              Cover Upload* 
-            </Button>
-          </label> */}
+         
           <br/>
           <Button variant="contained" color="primary" onClick={uploadWithJSON}>
             Save
