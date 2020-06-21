@@ -59,7 +59,9 @@ Laravel, React, REST and MySql
  
 -> Change the host part in the img src attribute in the file Movies.js(/src/components)
 
--> Start the project by running npm start
+-> Start the project by running:
+
+ npm start
 
 # Future Update
 
